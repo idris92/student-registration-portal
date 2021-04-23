@@ -32,6 +32,7 @@ class="active"
                     <input type="text" placeholder="Enter PhoneNumber" name="phone"  required >
                     <label for="state">State of Origin:</label>
                     <select name="state" class="state"  required>
+                        <option>Select State</option>
                         {% for x in state %}
                             <option value="{{x}}" selected> {{x}} </option>
                         {% endfor %}
@@ -65,7 +66,7 @@ class="active"
             
         </div>
         <div class="submit-cont">
-            <input type="submit" class="btn btn-primary btn-large form-submit" value="Submit">
+            <input type="submit" class="btn btn-primary btn-large form-submit" value="Submit" >
         </div>
     </form>
 </div>

@@ -1,5 +1,10 @@
 from flask import Flask, render_template, url_for, request
 import json
+import sqlite3
+import os
+
+currentDirectory = os.path.dirname(os.path.abspath(__file__))
+
 
 
 app = Flask(__name__)
@@ -9,17 +14,28 @@ def index():
     return render_template('index.html')
 
 @app.route('/getStarted', methods=['GET','POST'])
-def getStarted():
+def getStarted(): 
+
     state= []
-    localG= []  
-    if request.method == 'GET':
-        with open ('static/states-localgovts.json') as f:
-            data = json.load(f)
-            for x in data:
-                state.append(x['state'])
-        return render_template('getStarted.html',state=state)
-    elif request.method == 'POST':
-        print('POST')
+
+    # image_url = request.form['image']
+    # firstname = request.form['firstname']
+    # middlename = request.form['middlename']
+    # lastname = request.form['lastname']
+    # date = request.form['date']
+    # phone = request.form['phone']
+    # state = request.form['state']
+    # local = request.form['local-govt']
+    # nextofkin = request.form['next-of-kin']
+    # email = request.form['mail']
+    # address = request.form['address']
+    # score = request.form['score']
+
+    with open ('static/states-localgovts.json') as f:
+        data = json.load(f)
+        for x in data:
+            state.append(x['state'])
+    return render_template('getStarted.html',state=state)
     
 @app.route('/studentList')
 def studentList():

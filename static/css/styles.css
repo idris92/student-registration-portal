@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 45px; /* Margin bottom by footer height */
+}
+
+.navbar{
+    background-color: #343252;
+    border-radius: 0;
+}
+.navbar .container{
+    color: #fff;
+}
+
+
+.navbar-header a{
+    font-size: 24px;
+    font-weight: 900;
+}
+
+
+
+ /* body .container-row{
+    padding: 30px auto;
+} */
+.container-row{
+    margin: 30px auto 10px;
+}
+
+
+
+.btn-primary{
+    background-color: #343252;
+}
+img{
+    width: 100%;
+    height: 400px;
+    padding-top: 20px;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #343252;
+}
+.ustacky-invite{
+    color: orange;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.col-content{
+    padding-left: 120px;
+    padding-top: 80px;
+}
+
+/* Student form page */
+.student-row{
+    background-color: #b0acee;
+    margin: 10px 60px 10px;
+    padding: 10px 10px 10px;
+}
+
+.row{
+    margin: 3px;
+    overflow: hidden;
+}
+h2{
+    text-align: center;
+    color:#343252;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+input{
+    width: 100%;
+    height:28px;
+    background-color:#fff;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 5px;
+    overflow:hidden;
+}
+input:focus{
+    border:none;
+    outline: none;
+}
+.please{
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: red;
+    margin: 0;
+}
+.persona, .academic{
+    background-color: #343252;
+    width: 100%;
+    color: #fff;
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.submit-cont{
+    text-align: center;
+}
+.form-submit{
+    width: 50%;
+    margin: 10px auto 10px;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+}
+
+.textarea{
+    resize: none;
+    width: 100%;
+    height:108px;
+    background-color:#fff;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.state, .local-govt{
+    width: 100%;
+}
+
+.male-button{
+    right: 250px;
+    bottom: 0;
+}
+
+
+/* Student information */
+
+.studentinfo{
+    background-color: #b0acee;
+    height: 45px;
+    margin: 20px 30px;
+    border-radius: 5px;
+}
+
+.studentinfo p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: #343252;
+    padding: 10px;
+}
+
+.searchButton{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 20px 30px;
+}
+
+.search-container input{
+    border: 1px solid black;
+    width: 220px;
+    height: 45px;
+}
+.search-container select{
+    width: 220px;
+    height: 45px;
+}
+
+
+
+
+
+/* footer side */
+.footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px; /* Set the fixed height of the footer here */
+    background-color:#343252;
+    color: #fff;
+
+}
+.footer p{
+    margin-top: 15px;
+    line-break: 2px;
+}
+
+.navbar, .footer{
+    font-family: monospace;
+}

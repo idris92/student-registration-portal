@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>StudentList Page</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="studentinfo">
+    <p>info! All student record table</p>
+</div>
+<div >
+    <form action="" method="" class="search-container">
+        <input type="text" name="searchByName" class="searchByName" placeholder="Search Record By Name Only">
+        <select class="status">
+            <option>Select Admission Status</option>
+            <option>Not Admitted</option>
+            <option>Admitted</option>
+        </select>
+        <select class="gender">
+            <option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <input type="text" name="jambScore" class="jambScore" placeholder="Enter Jamb Score">
+        <input type="submit" class="btn btn-primary searchButton" value="Search">
+    </form>
+</div>
+<!-- <div>
+    <table class="tableInfo">
+        <tr class="tableHead">
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Jamb Score</th>
+            <th>Admission Status</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</div> -->
+{% endblock %}

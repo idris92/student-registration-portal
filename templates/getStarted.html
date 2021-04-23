@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>This is the get started page</title>
+{% endblock %}
+
+
+
+
+{% block getStarted_active %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="student-row">
+    <h2>Student Portal Form</h2>
+    <p class="please">Please fill all required information</p>
+    <p class='persona'>Personal Information</p>
+    <form action='/getStarted' method="POST">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="image">Upload Image:</label>
+                    <input type="file" name="image"  required>
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" placeholder="Enter Firstname" name="firstname"  required>
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" placeholder="Enter Lastname" name="lastname"  required>
+                    <label for="date">Date of Birth:</label>
+                    <input type="date" placeholder="mm/dd/yyyy" name="date"  required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" placeholder="Enter PhoneNumber" name="phone"  required >
+                    <label for="state">State of Origin:</label>
+                    <select name="state" class="state"  required>
+                        {% for x in state %}
+                            <option value="{{x}}" selected> {{x}} </option>
+                        {% endfor %}
+                    </select>
+                    <label for="next-of-kin">Next of kin:</label>
+                    <input type="text" placeholder="Enter the name of your next of kin" name="next-of-kin"  required>
+                </div>
+                <div class="col-md-6">
+                    <label for="middlename">Middlename:</label>
+                    <input type="text" placeholder="Enter Middlename" name="middlename"  required>
+                    <label for="mail">Email:</label>
+                    <input type="text" placeholder="Enter Email" name="mail"  required>
+                    <label for="address">Address:</label>
+                    <textarea type="textarea" placeholder="Enter Address" name="address" class="textarea"  required></textarea>
+                    <label for="mail">Local Government:</label>
+                    <select name="local-govt" class="local-govt"  >
+                        <!-- {% for x in localG %}
+                        <option value="{{x}}" selected> {{x}} </option>
+                        {% endfor %} -->
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <p class='academic'>Academics Related Information</p>
+                <div class="col-md-6"> 
+                    <label for="score">Jamb Score:</label>
+                    <input type="text" placeholder="Enter the name of your next of kin" name="score"  required>
+                </div>
+                <div class="col-md-6"></div> 
+            </div>
+            
+        </div>
+        <div class="submit-cont">
+            <input type="submit" class="btn btn-primary btn-large form-submit" value="Submit">
+        </div>
+    </form>
+</div>
+{% endblock %}

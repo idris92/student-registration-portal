@@ -18,19 +18,6 @@ def getStarted():
 
     state= []
 
-    # image_url = request.form['image']
-    # firstname = request.form['firstname']
-    # middlename = request.form['middlename']
-    # lastname = request.form['lastname']
-    # date = request.form['date']
-    # phone = request.form['phone']
-    # state = request.form['state']
-    # local = request.form['local-govt']
-    # nextofkin = request.form['next-of-kin']
-    # email = request.form['mail']
-    # address = request.form['address']
-    # score = request.form['score']
-
     with open ('static/states-localgovts.json') as f:
         data = json.load(f)
         for x in data:
@@ -45,6 +32,17 @@ def studentList():
 def details():
     return render_template('details.html')
 
+
+@app.route('/store', methods=['POST'])
+def store():
+    firstname = request.get_json['firstname']
+    lastname = request.get_json['lastname']
+    image = request.files['file']
+    if image:
+        print(success)
+    else:
+        print(fails)
+    # print(firstname, lastname)
 
 
 

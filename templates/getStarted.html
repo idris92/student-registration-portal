@@ -16,39 +16,39 @@ class="active"
     <h2>Student Portal Form</h2>
     <p class="please">Please fill all required information</p>
     <p class='persona'>Personal Information</p>
-    <form action='/getStarted' method="POST">
+    <form action='javascript:0' method="POST" enctype="multipart/form-data" id="studentData">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     <label for="image">Upload Image:</label>
-                    <input type="file" name="image"  required>
+                    <input type="file" name="image" accept="image/*" id='image' required>
                     <label for="firstname">Firstname:</label>
-                    <input type="text" placeholder="Enter Firstname" name="firstname"  required>
+                    <input type="text" placeholder="Enter Firstname" name="firstname" id="firstname" required>
                     <label for="lastname">Lastname:</label>
-                    <input type="text" placeholder="Enter Lastname" name="lastname"  required>
+                    <input type="text" placeholder="Enter Lastname" name="lastname" id="lastname" required>
                     <label for="date">Date of Birth:</label>
-                    <input type="date" placeholder="mm/dd/yyyy" name="date"  required>
+                    <input type="date" placeholder="mm/dd/yyyy" name="date" id="date" required>
                     <label for="phone">Phone Number:</label>
-                    <input type="text" placeholder="Enter PhoneNumber" name="phone"  required >
+                    <input type="text" placeholder="Enter PhoneNumber" name="phone" id="phone"  required >
                     <label for="state">State of Origin:</label>
-                    <select name="state" class="state"  required>
-                        <option>Select State</option>
+                    <select name="state" class="state" id="state"  required>
+                        <option selected>Select State</option>
                         {% for x in state %}
-                            <option value="{{x}}" selected> {{x}} </option>
+                            <option value="{{x}}" > {{x}} </option>
                         {% endfor %}
                     </select>
                     <label for="next-of-kin">Next of kin:</label>
-                    <input type="text" placeholder="Enter the name of your next of kin" name="next-of-kin"  required>
+                    <input type="text" placeholder="Enter the name of your next of kin" name="next-of-kin" id="kin" required>
                 </div>
                 <div class="col-md-6">
                     <label for="middlename">Middlename:</label>
-                    <input type="text" placeholder="Enter Middlename" name="middlename"  required>
+                    <input type="text" placeholder="Enter Middlename" name="middlename" id="middlename" required>
                     <label for="mail">Email:</label>
-                    <input type="text" placeholder="Enter Email" name="mail"  required>
+                    <input type="text" placeholder="Enter Email" name="mail" id="mail" required>
                     <label for="address">Address:</label>
-                    <textarea type="textarea" placeholder="Enter Address" name="address" class="textarea"  required></textarea>
+                    <textarea type="textarea" placeholder="Enter Address" name="address" class="textarea" id="address" required></textarea>
                     <label for="mail">Local Government:</label>
-                    <select name="local-govt" class="local-govt"  >
+                    <select name="local-govt" class="local-govt" id="local" >
                         <!-- {% for x in localG %}
                         <option value="{{x}}" selected> {{x}} </option>
                         {% endfor %} -->
@@ -59,14 +59,14 @@ class="active"
                 <p class='academic'>Academics Related Information</p>
                 <div class="col-md-6"> 
                     <label for="score">Jamb Score:</label>
-                    <input type="text" placeholder="Enter the name of your next of kin" name="score"  required>
+                    <input type="text" placeholder="Enter the name of your next of kin" name="score" id="score"  required>
                 </div>
                 <div class="col-md-6"></div> 
             </div>
             
         </div>
         <div class="submit-cont">
-            <input type="submit" class="btn btn-primary btn-large form-submit" value="Submit" >
+            <input type="submit" class="btn btn-primary btn-large form-submit" id="submit" value="Submit" >
         </div>
     </form>
 </div>

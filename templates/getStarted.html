@@ -16,12 +16,12 @@ class="active"
     <h2>Student Portal Form</h2>
     <p class="please">Please fill all required information</p>
     <p class='persona'>Personal Information</p>
-    <form action='javascript:0' method="POST" enctype="multipart/form-data" id="studentData">
+    <form action='/getStarted' method="POST" enctype="multipart/form-data" id="studentData">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     <label for="image">Upload Image:</label>
-                    <input type="file" name="image" accept="image/*" id='image' required>
+                    <input type="file" name="image" accept="image/*" id='image' >
                     <label for="firstname">Firstname:</label>
                     <input type="text" placeholder="Enter Firstname" name="firstname" id="firstname" required>
                     <label for="lastname">Lastname:</label>
@@ -38,7 +38,7 @@ class="active"
                         {% endfor %}
                     </select>
                     <label for="next-of-kin">Next of kin:</label>
-                    <input type="text" placeholder="Enter the name of your next of kin" name="next-of-kin" id="kin" required>
+                    <input type="text" placeholder="Enter the name of your next of kin" name="nextofkin" id="kin" required>
                 </div>
                 <div class="col-md-6">
                     <label for="middlename">Middlename:</label>

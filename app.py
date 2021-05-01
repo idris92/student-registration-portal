@@ -58,6 +58,10 @@ def getStarted():
     
 @app.route('/studentList')
 def studentList():
+    connection = sqlite3.connect(currentDirectory + "\students.db")
+    cursor = connection.cursor()
+    cursor.execute('select name, gender,jamb,')
+    rv = cursor.fetchall()
     return render_template('studentList.html')
 
 @app.route('/details')

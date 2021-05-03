@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request,redirect
 import json
 import sqlite3
 import os
@@ -36,6 +36,7 @@ def getStarted():
         image.save(os.path.join(app.config['upload_folder'], image.filename))
         middlename = request.form['middlename']
         dob = request.form['date']
+        sex = request.form['sex']
         phone = request.form['phone']
         state = request.form['state']
         local = request.form['local-govt']
@@ -48,27 +49,39 @@ def getStarted():
         # print(image.filename)
         connection = sqlite3.connect(currentDirectory + "\students.db")
         cursor = connection.cursor()
-        query1 = "INSERT INTO datatable VALUES ('{image_url}','{firstname}','{middlename}','{lastname}','{dob}',{phone},'{state}','{local}', '{nextofkin}', '{email}', '{address}', {score})".format( image_url = image_path, firstname= firstname, middlename= middlename,lastname = lastname, dob=dob, phone=phone, state= state, local=local, nextofkin= nextofkin,email=email,address=address, score=score)
-
+        query1 = "INSERT INTO datatable VALUES ('{image_url}','{firstname}','{middlename}','{lastname}','{dob}',{phone},'{state}','{local}', '{nextofkin}', '{email}', '{address}', {score},'{sex}')".format( image_url = image_path, firstname= firstname, middlename= middlename,lastname = lastname, dob=dob, phone=phone, state= state, local=local, nextofkin= nextofkin,email=email,address=address, score=score, sex=sex)
         cursor.execute(query1)
         connection.commit()
         connection.close()
-        return render_template('/studentList.html')
+        return redirect (url_for('studentList'))
 
     
 @app.route('/studentList')
 def studentList():
     connection = sqlite3.connect(currentDirectory + "\students.db")
     cursor = connection.cursor()
-    cursor.execute('select name, gender,jamb,')
+    cursor.execute('SELECT firstname,middlename,lastname,sex,score, phone from datatable')
     rv = cursor.fetchall()
-    return render_template('studentList.html')
-
-@app.route('/details')
-def details():
-    return render_template('details.html')
+    return render_template('/studentList.html', details = rv)
 
 
+@app.route('/details/<id>', methods =['POST'])
+def details(id):
+    word_id = id
+    connection = sqlite3.connect(currentDirectory + "\students.db")
+    cursor = connection.cursor()
+    # cursor.execute("SELECT * FROM datatable WHERE phone = @word_id" )
+    cursor.execute("SELECT * FROM datatable WHERE phone = 8030492399" )
+    rv = cursor.fetchall()
+    print(rv)
+    # return render_template('/details',data=rv)
+    # return redirect (url_for('detailed'))
+    return render_template('/details.html', data=rv)
+    
+@app.route('/details', methods=['GET','POST'])
+def detailed():
+    return render_template('/details.html')
+    
 
 
 

@@ -5,5 +5,53 @@
 {% endblock %}
 
 {% block content %}
+<div class="details-info">
+    <div class="picture">
+        <div class="profile-picture">
+
+        </div>
+        <div class="picture-text">
+            {%for items in data%}
+            <p>{{items[3]+' '+items[1]}}</p>
+            {% endfor %}
+            <button class="btn btn-large">Undecided</button>
+        </div>
+    </div>
+    <div class="personal-info">
+        <p class="info">Personal Information</p>
+        {%for items in data%}
+        <p>Email: {{items[9]}}</p>
+        <p>Gender: {{items[12]}}</p>
+        <p>Phone Number: {{items[5]}}</p>
+        <p>Date of Birth: {{items[4]}}</p>
+        <p>Address: {{items[10]}}</p>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="other-info1">
+    <p class="other-info2">Other information</p>
+    <div class="state-local">
+        {%for items in data%}
+        <p>State of Origin: {{items[6]}}</p>
+        <p>Local Govt: {{items[7]}}</p>
+        {% endfor %}
+    </div>
+</div>
+<div class="academics1">
+    <p class="academics2">Academics related information</p>
+    <div class="academics3">
+        {%for items in data%}
+        <p>Next of Kin: {{items[8]}}</p>
+        <p>Jamb Score: {{items[11]}}</p>
+        {% endfor %}
+        <p>Status:<span>undecided</span></p>
+        <select>
+            <option>Change-Status</option>
+            <option>Admitted</option>
+            <option>Not-Admitted</option>
+        </select>
+    </div>
+</div>
 
 {% endblock %}

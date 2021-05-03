@@ -26,7 +26,7 @@
         <input type="submit" class="btn btn-primary searchButton" value="Search">
     </form>
 </div>
-<!-- <div>
+<div>
     <table class="tableInfo">
         <tr class="tableHead">
             <th>S/N</th>
@@ -36,9 +36,17 @@
             <th>Admission Status</th>
             <th>Action</th>
         </tr>
+        {% for items in  details%}
         <tr>
-            <td></td>
+            <td>{{loop.index}}</td>
+            <td>{{items[2] +' '+items[0]+ ' '+ items[1]}}</td>
+            <td>{{items[3]}}</td>
+            <td>{{items[4]}}</td>
+            <td>Not Admitted</td>
+            <td><a class="btn btn-sm btn-success button-details" id="{{items[5]}}" href="{{url_for('detailed')}}" >Details</a></td>
         </tr>
+    
+        {% endfor %}
     </table>
-</div> -->
+</div>
 {% endblock %}

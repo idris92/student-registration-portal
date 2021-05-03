@@ -197,9 +197,97 @@ input:focus{
     width: 220px;
     height: 45px;
 }
+.tableInfo{
+    width: 100%;
+    margin: 0 20px;
+}
+.tableHead{
+    justify-content: space-between;
+    margin-top: 20px ;
+    
+}
+.tableHead th{
+    margin-left: 20px;
+    text-align: center;
+}
+td{
+    text-align: center;
+    padding-bottom: 10px;
+}
 
 
+/* details page */
 
+
+.details-info{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 30px;
+}
+.picture{
+    width: 20%;
+    position:relative;
+    text-align: center;
+}
+.profile-picture{
+    width: 75%;
+    height: 200px;
+    background-color: #343252;
+    
+}
+.picture-text{
+    
+    position: absolute;
+    top: 130px;
+    left: 40px
+}
+.picture-text p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.personal-info .info{
+    background-color: #7571b3;
+    color: #fff;
+    padding: 5px 500px 5px 5px;
+
+}
+
+.other-info1{
+    margin: 10px 30px;
+}
+.other-info2{
+    background-color: #7571b3;
+    color: #fff;
+    padding: 5px;
+}
+
+.state-local{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+.state-local p{
+    margin-right: 250px;
+}
+.academics1{
+    margin: 30px 30px;
+}
+.academics2{
+    background-color: #7571b3;
+    color: #fff;
+    padding: 5px;
+}
+.academics3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p span{
+    margin-left: 8px;
+}
 
 
 /* footer side */

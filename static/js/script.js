@@ -35,59 +35,39 @@ function changeLocal(word){
 }
 
 
-$('#submit').click(function(){
-    alert('clicked')
-    let data = new FormData();
-    data.append('file', $('#image')[0].files[0])
-    let firstname = $('#firstname').val();
-    let lastname = $('#lastname').val();
-    let middlename = $('#middlename').val();
-    let date = $('#date').val();
-    let phoneNumber = $('#phone').val();
-    let state = $('#state').val();
-    let kin = $('#kin').val();
-    let mail = $('#mail').val();
-    let address = $('#address').val();
-    let local = $('#local').val();
-    let score = $('#score').val();
-
-    
-    // $.ajax({
-    //             url:'/store',
-    //             type:'POST',
-    //             dataType: 'json',
-    //             data: JSON.stringify({
-    //                 'firstname':firstname,
-    //                 'lastname':lastname,
-    //                 'middlename':middlename,
-    //                 'date':date,
-    //                 'phoneNumber':phoneNumber,
-    //                 'state':state,
-    //                 'kin':kin,
-    //                 'mail':mail,
-    //                 'address':address,
-    //                 'local':local,
-    //                 'score':score,
-    //             }),
-    //             contentType: 'application/json, charset=UTF-8',
-    //             success: function(data){
-    //                 location.reload()
-    //             }
-                
-    // })
-    $.ajax({
-                url:'/store',
+// details operation
+$(function () {
+    $('.button-details').click( function(){
+        let word = $(this).attr('id');
+        $.ajax({
+                url:'/details/' + word ,
                 type:'POST',
-                data: data,
-                enctype:'multipart/form-data',
-                processData:false,
-                contentType:false,
+                
                 success: function(data){
-                    location.reload()
+                    
                 }
                 
-    })
+            })
+        
+        
 })
+
+})
+
+// $('.button-details').click(function(){
+//     let word = $(this).attr('id');
+//     console.log(word)
+//     $.ajax({
+//             url:'/details' + word ,
+//             type:'POST',
+            
+//             success: function(data){
+//                 // alert(data)
+//             }
+            
+//         })
+
+// })
 
 // $.getJSON("./static/states-localgovts.json", function(json) {
 //     for (i=0; i<json.length; i++){
